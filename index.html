@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP N°1 - Form</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("form").addEventListener("submit", function (e) {
+                const checkboxes = document.querySelectorAll('input[name="interet"]:checked');
+                if (checkboxes.length < 2) {
+                    alert("Veuillez cocher au moins 2 centres d'intérêt.");
+                    e.preventDefault(); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>TP N°1 HTML 5</h1>
+    <form id="form">
+        <fieldset>
+            <legend style="color: blue;">Informations Personnelles :</legend>
+            <label for="nom">Nom(s) *:</label>
+            <input type="text" id="nom" placeholder="Saisir Nom" required><br><br>
+            <label for="prenom">Prénom(s) *:</label>
+            <input type="text" id="prenom" placeholder="Saisir Prénom" required><br><br>
+            <label for="email">Email *:</label>
+            <input type="email" id="email" placeholder="Saisir Email valide" required><br><br>
+            <fieldset>
+            <legend style="color: blue;">Naissance :</legend>
+            <label for="date">Date *:</label>
+            <input type="date" id="date" required><br><br>
+            <label for="ville">Ville *:</label>
+            <select id="ville" required>
+                <option value="">Choisir une ville</option>
+                <option value="Casablanca">Casablanca</option>
+                <option value="Rabat">Rabat</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend style="color: red;">Coordonnées :</legend>
+            <label for="telephone">Téléphone *:</label>
+            <input type="tel" id="telephone" placeholder="10 chiffres" pattern="\d{10}" required><br><br>
+            <label for="adresse">Adresse *:</label>
+            <input type="text" id="adresse" placeholder="Saisir Adresse" required><br><br>
+            <label for="ville">Ville *:</label>
+            <select id="ville" required>
+                <option value="">Choisir une ville</option>
+                <option value="Casablanca">Casablanca</option>
+                <option value="Rabat">Rabat</option>
+                <option value="Autre">Autre</option>
+            </select><br><br>
+            <label for="codePostal">Code Postal :</label>
+            <input type="text" id="codePostal" placeholder="5 chiffres Max" maxlength="5" pattern="\d{5}" required>
+        </fieldset>
+        <fieldset style="background-color: yellow; color: green;">
+            <legend style="color: green;">Centre d'intérêt :</legend>
+            <label><input type="checkbox" name="interet" value="Science"> Science</label>
+            <label><input type="checkbox" name="interet" value="Littérature"> Littérature</label>
+            <label><input type="checkbox" name="interet" value="Théâtre"> Théâtre</label><br><br>
+            <label><input type="checkbox" name="interet" value="Cuisine"> Cuisine</label>
+            <label><input type="checkbox" name="interet" value="Histoire"> Histoire</label>
+            <label><input type="checkbox" name="interet" value="Sport"> Sport</label>
+        </fieldset>
+        <fieldset>
+    <legend style="color: red;">Tableaux en HTML :</legend>
+    <table border="3" cellpadding="7" cellspacing="5" style="border-color: red; background-color: orange;">
+    <tr>
+        <th colspan="3" style="background-color: orange;">champ1 - champ2 - champ3</th>
+        <th style="background-color: orange;">champ4</th>
+    </tr>
+    <tr>
+        <td style="background-color: blue;">Ben Abderrahmane</td>
+        <td style="background-color: yellow;">Mohammed Reda</td>
+        <td style="background-color: blue;">VAdr 1</td>
+        <td style="background-color: blue;">VVille 1</td>
+    </tr>
+    <tr>
+        <td Rowspan="2" style="background-color: yellow; text-align: center;text-align: right; vertical-align: top;">Ben Abdellah</td>
+        <td  style="background-color: green; text-align: left;">Zakaria</td>
+        <td colspan="2" rowspan="2" style=" text-align: center;background-color: white;vertical-align: bottom;text-align: right;">Meme adresse pour</td>
+    </tr>
+    <tr>
+        <td style="text-align: right;">     Zakia</td>
+        
+    </tr>
+    <tr>
+        <td style=" text-align: center;">Ben Elmoundir</td>
+        <td style=" text-align: center;">Bahae Eddine</td>
+        <td colspan="2" style="background-color: red; color: white; text-align: center;">Aucune valeur Saisie</td>
+    </tr>
+</table>
+</fieldset>
+<center>
+        <button type="submit">Envoyer</button>
+        <button type="reset">Réinitialiser</button>
+    </center>
+    </fieldset>
+    </form>
+  
+</body>
+</html>
